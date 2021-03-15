@@ -11,7 +11,7 @@ body{
 }
 
 .input{
-    text-align: center;
+    text-align: left;
     margin: 100px 0;
 }
 
@@ -42,5 +42,5 @@ input[type="submit"] {
 
 
 .display{
-    text-align: center;
+    text-align: left;
 }

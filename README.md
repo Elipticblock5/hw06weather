@@ -1,3 +1,22 @@
+# not finished with project, but submitting what I have.
+
+Have positive fetch command to API
+Have some results displaying to console log and innerHTML function.
+Rough CSS done for testing purposes.
+No icons yet.
+no bootstrap yet.
+Need to add, 5 day forecast and append bootstrap cards when implemented.
+
+ran out of time this week.
+submitting what is complete
+
+
+
+
+
+
+
+
 # 06 Server-Side APIs: Weather Dashboard
 
 Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
