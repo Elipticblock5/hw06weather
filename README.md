@@ -10,6 +10,9 @@ Need to add, 5 day forecast and append bootstrap cards when implemented.
 ran out of time this week.
 submitting what is complete
 
+[GitHub Page](https://elipticblock5.github.io/hw06weather/)
+[GitHub Repo](https://github.com/Elipticblock5/hw06weather)
+
 
 
 
