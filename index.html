@@ -1,49 +1,26 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Weather Dashboard App</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="Assets/css/style.css">
+<html lang="en">
 
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
 
+<body>
+    <div class="container-fluid main-container">
+        <nav class="navbar navbar-dark bg-dark">
+            <a href="#" class="navbar-brand">Weather Dashboard</a>
+        </nav>
+    </div>
 
-            <!-- header area-->
-        <header class="container-fluid text-center text-white bg-dark p-2">
-            <h1>Weather Dashboard</h1>
-        </header>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
 
-        <!-- input and search button to test fetch on javascript-->
-<div class="input">
-    <input type="text" class="inputValue" placeholder="Search a City">
-    <input type="submit" value="Submit" class="button">
-</div>
-
-<div class="display">
-    <h1 class="name"></h1>
-    <p class="description"></p>
-    <p class="temperature"></p>
-    <p class="UVindex"></p>
-    <p class="humidity"></p>
-    <p class="windspeed"></p>
-    <p class="weathericon"></p>
-</div>
-
-
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="./Assets/js/script.js" async defer></script>
-    </body>
 </html>
