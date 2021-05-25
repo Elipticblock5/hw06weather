@@ -4,31 +4,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--bootstrap link-->
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>Weather Dashboard</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="./Assets/css/style.css">
 </head>
 
 <body>
-    <div class="container-fluid main-container bg-dark">
-        <div class="container">
-            <nav class="navbar navbar-dark bg-dark">
-                <a href="#" class="navbar-brand">Weather Dashboard</a>
-            </nav>
-        </div>
-    </div>
+    <header class = "bg-dark text-white text-center p-2">
+        <h1>Weather Dashboard</h1>
+        
+          
+    </header>
 
-    <div class="container">
+    <main class="container-fluid">
 
         <div class="row">
-            <div class="col-md-3">
 
-                <div class="input-group mt-5">
-                    <input type="text" class="form-control input-search" placeholder="Search for a city"
+            <div class="col-12 col-md-3 p-2 search-column">
+
+                <form class = "border p-2" id = "city-input-form">
+
+                    <h4>Enter the City you wish to Search</h4>
+                    <input id ="city" type="text" autofocus = "true" class = "city-input"/>
+                    <button class = "btn btn-primary" type = "sumbit">Search</button>
+
+
+
+                </form>
+
+                <div class = "past-city border" id = "past-city-buttons"></div>
+            </div>
+
+            <div class="col-12 col-md-9">
+
+                <div class = "row border current-city" id = "current-forecast">
+
+                    <div class = "col-12">
+                        <h2 id ="searched-city"></h2>
+                        <div id = "current-city-container" class = "list-group"></div>
+                        </div>
+                    </div>
+            
+            <div class = "row border" id = "fiveday-forecsat">
+                <h2 class = "col-12" id = "forecast"></h2>
+                <div class = "div-flex" id = "fiveday-container"></div>
+            </div>
+
+            </div>
+
+            </div>
+
+
+
+
+                <!-- Old Code and layout
+                    
+                    
+                    <div class="input-group mt-5">
+                    <input type="text" class="form-control input-search" placeholder="Enter your city search"
+
+
+              
+
                         aria-label="City search" aria-describedby="basic-addon2">
                     <div class="input-group-append">
                         <span class="input-group-text" id="#search-btn"><i class="fas fa-search"></i>
@@ -57,12 +99,14 @@
 
         </div>
 
-    </div>
+    </div>  
+-->
 
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="Assets/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+    <script src="./Assets/js/script.js"></script>
 </body>
 
 </html>
