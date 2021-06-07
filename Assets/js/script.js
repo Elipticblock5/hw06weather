@@ -122,3 +122,117 @@ function getCityWeather() {
 
  //wind spped El
  weatherContainerEl.appendChild(windDataEl);
+
+ //section for UV index
+
+ var findUvIndex = function(lat,lon){
+    var apiKey = '5d70557326e750e6419dd74315c00fd5'
+    var apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
+    fetch(apiURL)
+    .then(function(response){
+        response.json().then(function(data){
+            showUvIndex(data)
+           // console.log(data)
+        });
+    });
+    //console.log(lat);
+    //console.log(lon);
+}
+
+var showUvIndex = function(index){
+    var showUvIndexEl = document.createElement("div");
+    showUvIndexEl.textContent = "UV Index: "
+    showUvIndexEl.classList = "list-group-item"
+
+    uvIndexValue = document.createElement("span")
+    uvIndexValue.textContent = index.value
+// if else for severity
+    if(index.value <=2){
+        uvIndexValue.classList = "favorable"
+    }else if(index.value >2 && index.value<=8){
+        uvIndexValue.classList = "moderate "
+    }
+    else if(index.value >8){
+        uvIndexValue.classList = "severe"
+    };
+
+    showUvIndexEl.appendChild(uvIndexValue);
+ 
+    // inster into current weater
+
+    weatherContainerEl.appendChild(showUUvIndexEl);
+}
+
+
+// Five day section
+
+var getFiveDay = function(city){
+    var apiKey = '5d70557326e750e6419dd74315c00fd5'
+    var apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
+
+    fetch(apiURL)
+    .then(function(response){
+        response.json().then(function(data){
+           displayFiveDay(data);
+        });
+    });
+};
+
+
+//display five day function
+
+var displayFiveDay = function(weather){
+    fiveDayContainerEl.textContent = ""
+    forecastTitle.textContent = "Five Day Forecast:";
+
+
+    //making index for forecast
+
+    var forecast = weather.list;
+    for(var i=5; i < forecast.length; i=i+8){
+   var dailyForecast = forecast[i];
+
+   //creates ane Element for the forecast
+
+   var forecastElement=document.createElement("div");
+       forecastElement.classList = "card bg-primary text-light m-2";
+
+       //create date element for the forecast
+       var todaysDate = document.createElement("h5")
+       todaysDate.textContent= moment.unix(dailyForecast.dt).format("MMM D, YYYY");
+       todaysDate.classList = "card-header text-center"
+       forecastElement.appendChild(todaysDate);
+
+
+        //create an image element
+        var weatherIcon = document.createElement("img")
+        weatherIcon.classList = "card-body text-center";
+        weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${dailyForecast.weather[0].icon}@2x.png`);
+
+        //append to forecast card
+       forecastElement.appendChild(weatherIcon);
+
+        //create temperature span
+        var forecastTempEl=document.createElement("span");
+        forecastTempEl.classList = "card-body text-center";
+        forecastTempEl.textContent = dailyForecast.main.temp + " °F";
+
+        //append to forecast card
+        forecastElement.appendChild(forecastTempEl);
+
+        var forecastHumidEl=document.createElement("span");
+       forecastHumidEl.classList = "card-body text-center";
+       forecastHumidEl.textContent = dailyForecast.main.humidity + "  %";
+
+       //append to forecast card
+       forecastElement.appendChild(forecastHumidEl);
+
+        // console.log(forecastElement);
+
+       //append to five day container
+        fiveDayContainerEl.appendChild(forecastElement);
+    }
+
+}
+
+
