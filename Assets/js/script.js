@@ -35,15 +35,15 @@ $(document).ready(function () {
         $("#search").val("");
         renderPastSearches();
 
-// drops data into correct containter. 
-        var weatherBox = $("#cur-weather");
+// drops data into correct containter, today 
+        var todaysWeathBox = $("#cur-weather");
         console.log(response);
-        weatherBox.append($("#city").text(response.name + " (" + moment().format('L') + ")"));
-        weatherBox.append($("#temp").text("Current Temp: " + response.main.temp.toFixed(1)));
-        weatherBox.append($("#feels").text("Feels Like Temp: " + response.main.feels_like.toFixed(1)));
-        weatherBox.append($("#humid").text("Humidity: " + response.main.humidity + "%"));
-        weatherBox.append($("#windspeed").text("Wind Speed: " + response.wind.speed + " MPH"));
-        $("#cur-weather").append(weatherBox);
+        todaysWeathBox.append($("#city").text(response.name + " (" + moment().format('L') + ")"));
+        todaysWeathBox.append($("#temp").text("Current Temp: " + response.main.temp.toFixed(1)));
+        todaysWeathBox.append($("#feels").text("Feels Like Temp: " + response.main.feels_like.toFixed(1)));
+        todaysWeathBox.append($("#humid").text("Humidity: " + response.main.humidity + "%"));
+        todaysWeathBox.append($("#windspeed").text("Wind Speed: " + response.wind.speed + " MPH"));
+        $("#cur-weather").append(todaysWeathBox);
 
 //uv variable and call
         var cityLatLong = [response.coord.lat, resopnse.coord.lon];
