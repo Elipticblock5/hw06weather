@@ -1,49 +1,78 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Weather Dashboard App</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="Assets/css/style.css">
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    
+    
+    <!--Bootstrap Link-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    
 
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="./Assets/css/style.css">
+</head>
 
 
-            <!-- header area-->
-        <header class="container-fluid text-center text-white bg-dark p-2">
-            <h1>Weather Dashboard</h1>
-        </header>
+<body>
+    <!--Putting in Title Header-->
+    <nav class = "navbar bg-light navbar-light">
+        <span class="navbar-brand mx-auto h1">Weather Dashboard</span>
+        
+    </nav>     
+    <br>
+<!--This will be the container section layout-->
 
-        <!-- input and search button to test fetch on javascript-->
-<div class="input">
-    <input type="text" class="inputValue" placeholder="Search a City">
-    <input type="submit" value="Submit" class="button">
+<div class="container-fluid">
+
+    <!-- Container One-->
+
+    <div class="row">
+        <!--Aside section 3 column-->
+        <aside class="col-md-3">
+            <!--Form Section-->
+            <form class="form-inline">
+                <label for="city-search-box"><strong>Enter The City to Search</strong></label>
+                <br>
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                        id="search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
+            </form>
+
+            <div id="past-searches"></div>
+            
+        </aside>
+
+        <!--HTML for main weather section, 9 colums in bootstrap 3 used in search, Container 2-->
+        <main class="col-md-9">
+
+            <row class="border" id="cur-weather">
+
+                <h3 id="city"></h3>
+                <p id="temp"></p>
+                <p id="humid"></p>
+                <p id="windspeed"></p>
+                <p id="feels"></p>
+                <p id="uv"></p>
+            </row>
+
+
+          <div id="weather-boxes" class="row">
+
+          </div>
+        </main>
+
+    </div>
 </div>
 
-<div class="display">
-    <h1 class="name"></h1>
-    <p class="description"></p>
-    <p class="temperature"></p>
-    <p class="UVindex"></p>
-    <p class="humidity"></p>
-    <p class="windspeed"></p>
-    <p class="weathericon"></p>
-</div>
 
 
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="./Assets/js/script.js" async defer></script>
-    </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+    <script src="./Assets/js/script.js"></script>
+</body>
+
 </html>
