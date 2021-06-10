@@ -20,90 +20,33 @@
     <nav class = "navbar bg-dark navbar-dark">
         <span class="navbar-brand mx-auto h1">Weather Dashboard</span>
         
-          
-    </header>
+    </nav>     
+    <br>
+<!--This will be the container section layout-->
 
-    <main class="container-fluid">
+<div class="container-fluid">
 
-        <div class="row">
+    <!-- Container One-->
 
-            <div class="col-12 col-md-3 p-2 search-column">
+    <div class="row">
+        <!--Aside section 3 column-->
+        <aside class="col-md-3">
+            <!--Form Section-->
+            <form class="form-inline">
+                <label for="city-search-box"><strong>Enter The City to Search</strong></label>
+                <br>
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                        id="search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 
-                <form class = "border p-2" id = "city-input-form">
+            </form>
 
-                    <h4>Enter the City you wish to Search</h4>
-                    <input id ="city" type="text" autofocus = "true" class = "city-input"/>
-                    <button class = "btn btn-primary" type = "sumbit">Search</button>
-
-
-
-                </form>
-
-                <div class = "past-city border" id = "past-city-buttons"></div>
-            </div>
-
-            <div class="col-12 col-md-9">
-
-                <div class = "row border current-city" id = "current-forecast">
-
-                    <div class = "col-12">
-                        <h2 id ="searched-city"></h2>
-                        <div id = "current-city-container" class = "list-group"></div>
-                        </div>
-                    </div>
+            <div id="past-searches"></div>
             
-            <div class = "row border" id = "fiveday-forecsat">
-                <h2 class = "col-12" id = "forecast"></h2>
-                <div class = "div-flex" id = "fiveday-container"></div>
-            </div>
+        </aside>
+    </div>
+</div>
 
-            </div>
-
-            </div> 
-
-
-
-
-                <!-- Old Code and layout 
-
-                    
-                    
-                    <div class="input-group mt-5">
-                    <input type="text" class="form-control input-search" placeholder="Enter your city search"
-
-
-              
-
-                        aria-label="City search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                        <span class="input-group-text" id="#search-btn"><i class="fas fa-search"></i>
-                        </span>
-                    </div>
-                </div> 
-
-
-
-                <h4 class="mt-5"><em>Recent Searches</em></h4>
-
-                <ul class="list-group mt-3"></ul>
-
-            </div>
-
-            <div class="col offset-md-1">
-
-                <div class="alert alert-danger mt-5" role="alert">
-                    Nothing was found for that search result.
-                </div>
-
-                <div id="today"></div>
-
-                <div class="row mt-5 forecast-row"></div>
-            </div>
-
-        </div>
-
-    </div>  
--->
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
