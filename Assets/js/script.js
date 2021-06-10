@@ -35,6 +35,13 @@ $(document).ready(function () {
         $("#search").val("");
         renderPastSearches();
 
-
-
+// drops data into correct containter. 
+        var weatherBox = $("#cur-weather");
+        console.log(response);
+        weatherBox.append($("#city").text(response.name + " (" + moment().format('L') + ")"));
+        weatherBox.append($("#temp").text("Current Temp: " + response.main.temp.toFixed(2)));
+        weatherBox.append($("#feels").text("Feels Like Temp: " + response.main.feels.toFixed(2)));
+        weatherBox.append($("#humid").text("Humidity: " + response.main.humid + "%"));
+        weatherBox.append($("#windspeed").text("Wind Speed: " + response.windspeed.speed + " MPH"));
+        $("#cur-weather").append(weatherBox);
 
