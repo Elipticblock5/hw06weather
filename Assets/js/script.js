@@ -63,3 +63,36 @@ $(document).ready(function () {
             curWeathEl.append($("#uv").text("UV Index: " + response.value));
         });
     };
+
+      // Get the five day
+      $.ajax({
+        url: "https://api.openweathermap.org/data/2.5/forecast?q=" + cityInput + "&units=imperial&appid=5d70557326e750e6419dd74315c00fd5",
+        method: "GET"
+    }).then(function (response) {
+        console.log(response)
+
+     //clears weahter boxes
+     $("#weather-boxes").empty();
+
+     //appends weather box section, have to iterate through current date
+
+     for (var i = 1; i < 6; i++) {
+        var box = $("<div>")
+        var boxCol = $("<div class='col-md-2'>");
+        var weathTitle = $("<h5>");
+        var openWeathImg = $("<img>").attr("src", "https://openweathermap.org/img/wn/" + response.list[i].weather[0].icon + ".png").attr("style", "width: 100px;")
+        var para1 = $("<p>").text("Temp: " + response.list[i].main.temp_max + " °F");
+        var para2 = $("<p>").text("Humidity: " + response.list[i].main.humidity + "%");
+
+        $("#weather-boxes").append(box.append(boxCol.append((weathTitle).text(moment().add(i, "day").format('L')), openWeathImg, para1, para2)))
+    }
+});
+});
+
+
+    $(document).on("click", ".city", function () {
+            console.log($(this).text());
+        });    
+
+        renderPastSearches();
+    });
