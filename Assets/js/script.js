@@ -45,3 +45,21 @@ $(document).ready(function () {
         weatherBox.append($("#windspeed").text("Wind Speed: " + response.windspeed.speed + " MPH"));
         $("#cur-weather").append(weatherBox);
 
+//uv variable and call
+        var cityLatLong = [response.coord.lat, resopnse.coord.lon];
+        cityUVindex(cityLatLong);
+
+    });
+
+    //calling function to get UV for city
+
+    function cityUVindex(cityLatLong) {
+        
+        $.ajax({
+            url: "https://api.openweathermap.org/data/2.5/uvi?appid=appid=5d70557326e750e6419dd74315c00fd5&lat=" + cityLatLong[0] + "&lon=" + cityLatLong[1],
+            method: "GET"
+        }).then(function (response) {
+            var curWeathEl = $("#cur-weather");
+            curWeathEl.append($("#uv").text("UV Index: " + response.value));
+        });
+    };
