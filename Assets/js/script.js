@@ -46,6 +46,25 @@ var getCityForecast = function(city){
         response.json().then(function(data){
             displayCityWeather(data,city);
         });
+        var todaysDate = document.createElement("span")
+        todaysDate.textContent=" (" + moment(weather.dt.value).format("MMM D, YYYY") + ") ";
+        citySearchInputEl.appendChild(todaysDate);
+
+        var weathIcon = document.createElement("img")
+        weathIcon.setAttribute("src", `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`);
+        inputCitySearchEl.appendChild(weathIcon);
+
+        var tempEl = document.createElement("span");
+        tempEl.textContent = "Temperature: " + weather.main.temp + " °F";
+        tempEl.classList = "list-group-item";
+
+        var humidEl = document.createElement("span");
+        humidEl.textContent = "Humidity: " + weather.main.humidity + " %";
+        humidEl.classList = "list-group-item";
+
+        var windDataEl = document.createElement("span");
+        windDataEl.textContent = "Wind Speed: " + weather.wind.speed + " MPH";
+        windDataEl.classList = "list-group-item";
     });
 };
 
@@ -57,33 +76,33 @@ var displayCityWeather = function(weather, searchCities) {
 }
 
 
-//create date element using moment
+/*create date element using moment
 var todaysDate = document.createElement("span")
 todaysDate.textContent=" (" + moment(weather.dt.value).format("MMM D, YYYY") + ") ";
-citySearchInputEl.appendChild(todaysDate);
-
+citySearchInputEl.appendChild(todaysDate);*/
 //makes an imaage using icons
 
- var weathIcon = document.createElement("img")
+ /*var weathIcon = document.createElement("img")
  weathIcon.setAttribute("src", `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`);
- inputCitySearchEl.appendChild(weathIcon);
+ inputCitySearchEl.appendChild(weathIcon);*/
+
 
 
  //makes an area to hold temp data
- var tempEl = document.createElement("span");
+ /*var tempEl = document.createElement("span");
  tempEl.textContent = "Temperature: " + weather.main.temp + " °F";
- tempEl.classList = "list-group-item"
+ tempEl.classList = "list-group-item"*/
 
 
 // makes an area to hold humid data
-   var humidEl = document.createElement("span");
+   /* var humidEl = document.createElement("span");
    humidEl.textContent = "Humidity: " + weather.main.humidity + " %";
-   humidEl.classList = "list-group-item"
+   humidEl.classList = "list-group-item" */
 
 // makes a wind datea holder
-  var windDataEl = document.createElement("span");
+  /* var windDataEl = document.createElement("span");
   windDataEl.textContent = "Wind Speed: " + weather.wind.speed + " MPH";
-  windDataEl.classList = "list-group-item"
+  windDataEl.classList = "list-group-item" */
 
 
 
@@ -115,13 +134,13 @@ function getCityWeather() {
 // Places above variables in containers
 
  //tmp El
- weatherContainerEl.appendChild(tempEl);
+ weatherContainerFlexBoxEl.appendChild(tempEl);
 
  //humid El
- weatherContainerEl.appendChild(humidEl);
+ weatherContainerFlexBoxEl.appendChild(humidEl);
 
  //wind spped El
- weatherContainerEl.appendChild(windDataEl);
+ weatherContainerFlexBoxEl.appendChild(windDataEl);
 
  //section for UV index
 
