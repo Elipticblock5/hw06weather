@@ -31,7 +31,7 @@ $(document).ready(function () {
         if (!pastSearches.includes(response.name)) {
             pastSearches.push(response.name);
         }
-        localStorage.setItem("searches", JSON.stringify(pastSearches));
+        localStorage.setItem("pastSearches", JSON.stringify(pastSearches));
         $("#search").val("");
         renderPastSearches();
 
@@ -39,10 +39,10 @@ $(document).ready(function () {
         var weatherBox = $("#cur-weather");
         console.log(response);
         weatherBox.append($("#city").text(response.name + " (" + moment().format('L') + ")"));
-        weatherBox.append($("#temp").text("Current Temp: " + response.main.temp.toFixed(2)));
-        weatherBox.append($("#feels").text("Feels Like Temp: " + response.main.feels.toFixed(2)));
-        weatherBox.append($("#humid").text("Humidity: " + response.main.humid + "%"));
-        weatherBox.append($("#windspeed").text("Wind Speed: " + response.windspeed.speed + " MPH"));
+        weatherBox.append($("#temp").text("Current Temp: " + response.main.temp.toFixed(1)));
+        weatherBox.append($("#feels").text("Feels Like Temp: " + response.main.feels_like.toFixed(1)));
+        weatherBox.append($("#humid").text("Humidity: " + response.main.humidity + "%"));
+        weatherBox.append($("#windspeed").text("Wind Speed: " + response.wind.speed + " MPH"));
         $("#cur-weather").append(weatherBox);
 
 //uv variable and call
