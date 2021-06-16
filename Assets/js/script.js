@@ -21,7 +21,7 @@ $(document).ready(function () {
 
     var cityInput = $("#search").val().trim();
 
-    //call to API
+    //call to API with city input value
 
     $.ajax({
         url: "https://api.openweathermap.org/data/2.5/weather?q=" + cityInput + "&units=imperial&appid=5d70557326e750e6419dd74315c00fd5",
@@ -35,7 +35,7 @@ $(document).ready(function () {
         $("#search").val("");
         renderPastSearches();
 
-// drops data into correct containter, today 
+// drops data into correct containter, today cur weather box
         var todaysWeathBox = $("#cur-weather");
         console.log(response);
         todaysWeathBox.append($("#city").text(response.name + " (" + moment().format('L') + ")"));
@@ -46,17 +46,19 @@ $(document).ready(function () {
         $("#cur-weather").append(todaysWeathBox);
 
 //uv variable and call
-        var cityCoord = [response.coord.lat, response.coord.lon];
-        cityUVindex(cityCoord);
+        var cityCoords = [response.coord.lat, response.coord.lon];
+        cityUVindex(cityCoords);
 
     });
 
     //calling function to get UV for city
 
-    function cityUVindex(cityCoord) {
+    //fixed with AsKBCS ticket 70335
+
+    function cityUVindex(cityCoords) {
         
         $.ajax({
-            url: "https://api.openweathermap.org/data/2.5/uvi?appid=appid=5d70557326e750e6419dd74315c00fd5&lat=" + cityCoord[0] + "&lon=" + cityCoord[1],
+            url: "https://api.openweathermap.org/data/2.5/uvi?appid=5d70557326e750e6419dd74315c00fd5&lat=" + cityCoords[0] + "&lon=" + cityCoords[1],
             method: "GET"
         }).then(function (response) {
             var curWeathEl = $("#cur-weather");
@@ -75,16 +77,16 @@ $(document).ready(function () {
      $("#weather-boxes").empty();
 
      //appends weather box section, have to iterate through current date
-
+    // worked with askBCS ticket 70335 for help with display problems. 
      for (var i = 1; i < 6; i++) {
-        var box = $("<div>")
+        // var box = $("<div>") we don't necessarily need to put our div.col-md-2 inside a parent-div
         var boxCol = $("<div class='col-md-2'>");
         var weathTitle = $("<h5>");
         var openWeathImg = $("<img>").attr("src", "https://openweathermap.org/img/wn/" + response.list[i].weather[0].icon + ".png").attr("style", "width: 100px;")
         var para1 = $("<p>").text("Temp: " + response.list[i].main.temp_max + " °F");
         var para2 = $("<p>").text("Humidity: " + response.list[i].main.humidity + "%");
 
-        $("#weather-boxes").append(box.append(boxCol.append((weathTitle).text(moment().add(i, "day").format('L')), openWeathImg, para1, para2)))
+        $("#weather-boxes").append(boxCol.append((weathTitle).text(moment().add(i, "day").format('L')), openWeathImg, para1, para2))
     }
 });
 });
