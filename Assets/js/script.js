@@ -46,17 +46,17 @@ $(document).ready(function () {
         $("#cur-weather").append(todaysWeathBox);
 
 //uv variable and call
-        var cityLatLong = [response.coord.lat, resopnse.coord.lon];
-        cityUVindex(cityLatLong);
+        var cityCoord = [response.coord.lat, response.coord.lon];
+        cityUVindex(cityCoord);
 
     });
 
     //calling function to get UV for city
 
-    function cityUVindex(cityLatLong) {
+    function cityUVindex(cityCoord) {
         
         $.ajax({
-            url: "https://api.openweathermap.org/data/2.5/uvi?appid=appid=5d70557326e750e6419dd74315c00fd5&lat=" + cityLatLong[0] + "&lon=" + cityLatLong[1],
+            url: "https://api.openweathermap.org/data/2.5/uvi?appid=appid=5d70557326e750e6419dd74315c00fd5&lat=" + cityCoord[0] + "&lon=" + cityCoord[1],
             method: "GET"
         }).then(function (response) {
             var curWeathEl = $("#cur-weather");
