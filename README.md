@@ -1,66 +1,42 @@
-# not finished with project, but submitting what I have.
+# hw06weather
 
-Have positive fetch command to API
-Have some results displaying to console log and innerHTML function.
-Rough CSS done for testing purposes.
-No icons yet.
-no bootstrap yet.
-Need to add, 5 day forecast and append bootstrap cards when implemented.
+# Weather Dashboard
 
-ran out of time this week.
-submitting what is complete
+## Licensing:
 
-[GitHub Page](https://elipticblock5.github.io/hw06weather/)
-[GitHub Repo](https://github.com/Elipticblock5/hw06weather)
+[![license](https://img.shields.io/badge/license-ISC-yellow)](https://shields.io)
 
+## Description
 
+Using OpenWeather API to create weather dashbaord app to find weather and display info
+for any city and display 5 day forecast.
 
+## Deployed Application Link
 
+[Weather Dashboard](https://elipticblock5.github.io/hw06weather/)
 
+## Table of Contents
 
+- [License](#License)
 
+- [Technology](#Technology)
 
-# 06 Server-Side APIs: Weather Dashboard
+- [Questions](#Questions)
 
-Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
+### License
 
-Use the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data for cities. The documentation includes a section called "How to start" that will provide basic setup and usage instructions. Use `localStorage` to store any persistent data.
+ISC
 
-## User Story
+### Technology
 
-```
-AS A traveler
-I WANT to see the weather outlook for multiple cities
-SO THAT I can plan a trip accordingly
-```
+- JavaScript
+- HTML
+- CSS
+- JQuery
+- Web API
+- AJAX
 
-## Acceptance Criteria
+## Questions
 
-```
-GIVEN a weather dashboard with form inputs
-WHEN I search for a city
-THEN I am presented with current and future conditions for that city and that city is added to the search history
-WHEN I view current weather conditions for that city
-THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
-WHEN I view the UV index
-THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
-WHEN I view future weather conditions for that city
-THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, and the humidity
-WHEN I click on a city in the search history
-THEN I am again presented with current and future conditions for that city
-```
-
-The following image demonstrates the application functionality:
-
-![weather dashboard demo](./Assets/06-server-side-apis-homework-demo.png)
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
-- - -
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+- For questions, please email me at nbjohnson@gmail.com
+- Find me on Github at [EliptickBlock5](https://github.com/Elipticblock5)
